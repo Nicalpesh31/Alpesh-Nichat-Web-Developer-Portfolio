@@ -1,0 +1,57 @@
+@keyframes textGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .animate-text {
+    animation: textGlow 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes fadeHighlight {
+    0% {
+      color: #ffffff; /* Default white */
+      text-shadow: none;
+    }
+    50% {
+      color: #00bfff; /* Subtle blue highlight */
+      text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+    }
+    100% {
+      color: #ffffff; /* Back to default white */
+      text-shadow: none;
+    }
+  }
+  
+  .highlight-item {
+    animation: fadeHighlight 1.5s ease-in-out forwards;
+    animation-delay: calc(var(--highlight-index) * 0.3s); /* Staggered delay */
+    display: inline-block;
+    font-weight: 600; /* Slightly bold for emphasis */
+  }
+  
+  /* Assign staggered delays to each item */
+  .highlight-item:nth-child(1) {
+    --highlight-index: 0;
+  }
+  
+  .highlight-item:nth-child(2) {
+    --highlight-index: 1;
+  }
+  
+  .highlight-item:nth-child(3) {
+    --highlight-index: 2;
+  }
+  
+  .highlight-item:nth-child(4) {
+    --highlight-index: 3;
+  }
+  
+  .highlight-item:nth-child(5) {
+    --highlight-index: 4;
+  }
+  
+  .highlight-item:nth-child(6) {
+    --highlight-index: 5;
+  }
+  
