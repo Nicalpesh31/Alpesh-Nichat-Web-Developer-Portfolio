@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Twitter, Facebook, Instagram, Linkedin, Github, MapPin, Mail, Phone, Share2, Award, Smile, FileText, Headphones, Globe, Database, Code } from 'lucide-react';
+import { Twitter, Facebook, Instagram, Linkedin, Github, MapPin, Mail, Phone, Share2 } from 'lucide-react';
 import 'devicon/devicon.min.css';
-import './style/app.css';
 
 
 function App() {
