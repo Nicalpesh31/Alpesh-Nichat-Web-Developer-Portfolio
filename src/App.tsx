@@ -60,14 +60,35 @@ function App() {
           {/* Navigation */}
           <nav className="mb-8">
             <ul className="flex flex-wrap justify-center gap-6 text-lg text-white">
-              <li className="highlight-item"><a href="#header" className="hover:text-blue-300 transition-colors">Home</a></li>
-              <li className="highlight-item"><a href="#about" className="hover:text-blue-300 transition-colors">About</a></li>
-              <li className="highlight-item"><a href="/src/file/Alpesh_Nichat-Resume.pdf" className="hover:text-blue-300 transition-colors">Resume</a></li>
-              <li className="highlight-item"><a href="#skills" className="hover:text-blue-300 transition-colors">Skills</a></li>
-              <li className="highlight-item"><a href="#portfolio" className="hover:text-blue-300 transition-colors">Projects</a></li>
-              <li className="highlight-item"><a href="#contact" className="hover:text-blue-300 transition-colors">Contact</a></li>
+              <li className="highlight-item">
+                <a href="#header" className="hover:text-blue-300 transition-colors">Home</a>
+              </li>
+              <li className="highlight-item">
+                <a href="#about" className="hover:text-blue-300 transition-colors">About</a>
+              </li>
+              <li className="highlight-item">
+                <a
+                  href="/Alpesh_Nichat-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-300 transition-colors"
+                >
+                  Resume
+                </a>
+
+              </li>
+              <li className="highlight-item">
+                <a href="#skills" className="hover:text-blue-300 transition-colors">Skills</a>
+              </li>
+              <li className="highlight-item">
+                <a href="#portfolio" className="hover:text-blue-300 transition-colors">Projects</a>
+              </li>
+              <li className="highlight-item">
+                <a href="#contact" className="hover:text-blue-300 transition-colors">Contact</a>
+              </li>
             </ul>
           </nav>
+
 
 
           {/* Social Links */}
@@ -91,83 +112,83 @@ function App() {
         </div>
       </header>
 
-    {/* About Section */}
-<section ref={aboutRef} id="about" className="section py-20 px-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
-  <div className="max-w-6xl mx-auto">
-    {/* Section Header */}
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-      <p className="text-lg text-blue-400">A quick overview of who I am and what I do</p>
-    </div>
+      {/* About Section */}
+      <section ref={aboutRef} id="about" className="section py-20 px-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+            <p className="text-lg text-blue-400">A quick overview of who I am and what I do</p>
+          </div>
 
-    {/* Content */}
-    <div className="grid md:grid-cols-2 gap-12 items-center">
-      {/* Text Content */}
-      <div>
-        <h3 className="text-3xl font-semibold text-white mb-6">Full Stack Web Developer</h3>
-        <p className="text-gray-300 mb-4">
-          I am a dedicated Full Stack Web Developer skilled in creating responsive, user-centric websites and applications. I combine technical expertise with creative problem-solving to deliver high-quality solutions that meet business goals.
-        </p>
-        <p className="text-gray-300 mb-4">
-          My strong foundation in modern development technologies, paired with a passion for learning and innovation, positions me to thrive in dynamic and challenging environments.
-        </p>
-        {/* Resume Button */}
-        <div className="text-center mt-6">
-          <a 
-            href="/src/file/Alpesh_Nichat-Resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
-          >
-            Download Resume
-          </a>
+          {/* Content */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div>
+              <h3 className="text-3xl font-semibold text-white mb-6">Full Stack Web Developer</h3>
+              <p className="text-gray-300 mb-4">
+                I am a dedicated Full Stack Web Developer skilled in creating responsive, user-centric websites and applications. I combine technical expertise with creative problem-solving to deliver high-quality solutions that meet business goals.
+              </p>
+              <p className="text-gray-300 mb-4">
+                My strong foundation in modern development technologies, paired with a passion for learning and innovation, positions me to thrive in dynamic and challenging environments.
+              </p>
+              {/* Resume Button */}
+              <div className="text-center mt-6">
+                <a
+                  href="/src/file/Alpesh_Nichat-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
+                >
+                  Download Resume
+                </a>
+              </div>
+            </div>
+
+            {/* Info Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Column 1 */}
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Birthday:</span>
+                  <span className="text-gray-300">31 May 2000</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Phone:</span>
+                  <span className="text-gray-300">+91 98345 98196</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">City:</span>
+                  <span className="text-gray-300">Pune, Maharashtra, India</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Experience:</span>
+                  <span className="text-gray-300">Fresher</span>
+                </li>
+              </ul>
+              {/* Column 2 */}
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Age:</span>
+                  <span className="text-gray-300">24</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Degree:</span>
+                  <span className="text-gray-300">Master of Computer Applications (MCA)</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Email:</span>
+                  <span className="text-gray-300">alpesh.nic31@gmail.com</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="font-bold text-white">Interests:</span>
+                  <span className="text-gray-300">Web Development, UI/UX Design, Cloud Computing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Info Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Column 1 */}
-        <ul className="space-y-4">
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Birthday:</span>
-            <span className="text-gray-300">31 May 2000</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Phone:</span>
-            <span className="text-gray-300">+91 98345 98196</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">City:</span>
-            <span className="text-gray-300">Pune, Maharashtra, India</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Experience:</span>
-            <span className="text-gray-300">Fresher</span>
-          </li>
-        </ul>
-        {/* Column 2 */}
-        <ul className="space-y-4">
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Age:</span>
-            <span className="text-gray-300">24</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Degree:</span>
-            <span className="text-gray-300">Master of Computer Applications (MCA)</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Email:</span>
-            <span className="text-gray-300">alpesh.nic31@gmail.com</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="font-bold text-white">Interests:</span>
-            <span className="text-gray-300">Web Development, UI/UX Design, Cloud Computing</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 
