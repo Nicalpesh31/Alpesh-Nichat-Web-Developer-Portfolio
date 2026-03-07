@@ -672,35 +672,21 @@ function App() {
               <p>+91-9834598196</p>
             </div>
           </div>
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            className="space-y-6"
-          >
-            {/* Netlify hidden input */}
-            <input type="hidden" name="form-name" value="contact" />
 
-            {/* Honeypot field */}
-            <input type="hidden" name="bot-field" />
-
+          <form action="https://formspree.io/f/xvgplezr" method="post" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
-
+                className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500" />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 required
-                className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
+                className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"/>
             </div>
 
             <input
@@ -708,9 +694,8 @@ function App() {
               name="subject"
               placeholder="Subject"
               required
-              className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"
-            />
-
+              className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"/>
+            
             <textarea
               name="message"
               rows={5}
@@ -718,7 +703,7 @@ function App() {
               required
               className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"
             ></textarea>
-
+            
             <div className="text-center">
               <button
                 type="submit"
@@ -728,6 +713,7 @@ function App() {
               </button>
             </div>
           </form>
+
         </div>
       </section>
 
