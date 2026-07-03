@@ -672,21 +672,31 @@ function App() {
               <p>+91-9834598196</p>
             </div>
           </div>
- {/* action="https://formspree.io/f/xvgplezr" method="post" className="space-y-6" */}
-          <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify
+            className="space-y-6"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
             <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500" />
+                className="w-full p-3 bg-gray-800 rounded-lg"
+              />
+
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 required
-                className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"/>
+                className="w-full p-3 bg-gray-800 rounded-lg"
+              />
             </div>
 
             <input
@@ -694,24 +704,20 @@ function App() {
               name="subject"
               placeholder="Subject"
               required
-              className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"/>
-            
+              className="w-full p-3 bg-gray-800 rounded-lg"
+            />
+
             <textarea
               name="message"
               rows={5}
               placeholder="Message"
               required
-              className="w-full p-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500"
-            ></textarea>
-            
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Send Message
-              </button>
-            </div>
+              className="w-full p-3 bg-gray-800 rounded-lg"
+            />
+
+            <button type="submit">
+              Send Message
+            </button>
           </form>
 
         </div>
