@@ -672,8 +672,8 @@ function App() {
               <p>+91-9834598196</p>
             </div>
           </div>
-
-          <form action="https://formspree.io/f/xvgplezr" method="post" className="space-y-6">
+ {/* action="https://formspree.io/f/xvgplezr" method="post" className="space-y-6" */}
+          <form name="contact" method="POST" data-netlify="true" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="text"
