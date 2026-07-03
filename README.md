@@ -19,7 +19,7 @@ Welcome to my portfolio! I am a **Full Stack Web Developer** passionate about cr
 
 ## How to View My Portfolio
 
-You can view my portfolio by visiting [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio).
+You can view my portfolio by visiting https://alpesh-nichat.netlify.app/ 
 
 ## Features
 
