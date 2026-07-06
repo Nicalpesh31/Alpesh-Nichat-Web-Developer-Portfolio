@@ -137,7 +137,7 @@ function App() {
               </p>
 
               <a
-                href="/public/Alpesh_Nichat-Resume.pdf"
+                href="/Alpesh_Nichat-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-md hover:scale-105 transform transition duration-300"
