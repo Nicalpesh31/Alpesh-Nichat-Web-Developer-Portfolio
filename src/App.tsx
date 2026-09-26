@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Twitter, Facebook, Instagram, Linkedin, Github, MapPin, Mail, Phone, Share2 } from 'lucide-react';
 import 'devicon/devicon.min.css';
 
@@ -6,10 +6,10 @@ import 'devicon/devicon.min.css';
 function App() {
   const [filter, setFilter] = useState('all');
   const aboutRef = useRef<HTMLDivElement>(null);
-  const resumeRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +27,6 @@ function App() {
 
     const sections = [
       aboutRef.current,
-      resumeRef.current,
       skillRef.current,
       projectsRef.current,
       contactRef.current,
@@ -54,54 +53,155 @@ function App() {
           backgroundImage: `url('https://images.unsplash.com/photo-1515343480029-43cdfe6b6aae?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative z-10 text-center px-6 py-12 rounded-lg max-w-4xl">
-          {/* Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 animate-text">
-            <span className="typing-animation">Alpesh Nichat</span>
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 py-12 max-w-5xl mx-auto">
+
+          {/* Availability Badge */}
+          <div className="inline-flex items-center rounded-full border border-blue-400/40 bg-blue-500/10 backdrop-blur-sm px-5 py-2 text-sm font-medium text-blue-200 mb-6">
+            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+            Assistant Lecturer & Software Professional
+          </div>
+
+          {/* Name */}
+          <h1 className="text-6xl md:text-7xl font-bold mb-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500">
+            <span>Alpesh Nichat</span>
           </h1>
 
-          <h2 className="text-xl md:text-2xl text-gray-300 mb-8">
-            I'm a passionate <span className="text-blue-300 font-semibold">Web Developer</span> from Pune
+          {/* Professional Title */}
+          <h2 className="text-xl md:text-3xl text-gray-200 mb-6 leading-relaxed">
+            Assistant Lecturer at{" "}
+            <span className="text-blue-300 font-semibold">
+              Gokul Global University
+            </span>
           </h2>
 
-          {/* Navigation */}
-          <nav className="mb-8">
-            <ul className="flex flex-wrap justify-center gap-6 text-lg text-white font-medium">
-              <li><a href="#header" className="hover:text-blue-400 transition">Home</a></li>
-              <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
-              <li>
-                <a
-                  href="/Alpesh_Nichat-Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-400 transition"
-                >
-                  Resume
-                </a>
-              </li>
-              <li><a href="#skills" className="hover:text-blue-400 transition">Skills</a></li>
-              <li><a href="#portfolio" className="hover:text-blue-400 transition">Projects</a></li>
-              <li><a href="#contact" className="hover:text-blue-400 transition">Contact</a></li>
-            </ul>
-          </nav>
+          {/* Professional Description */}
+          <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-300 leading-8 mb-8">
+            MCA professional with{" "}
+            <span className="text-white font-semibold">5+ years of IT experience</span>,
+            specializing in{" "}
+            <span className="text-blue-300">Web Development</span>,{" "}
+            <span className="text-purple-300">Software Development</span>, and{" "}
+            <span className="text-pink-300">UI/UX Design</span>.
+            Currently teaching and mentoring students in modern web technologies,
+            Git & Version Control, Mathematics for AI, and Dynamic Web Development.
+          </p>
+
+          {/* Skills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-gray-200 text-sm backdrop-blur-sm">
+              React.js
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-gray-200 text-sm backdrop-blur-sm">
+              JavaScript
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-gray-200 text-sm backdrop-blur-sm">
+              Web Development
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-gray-200 text-sm backdrop-blur-sm">
+              Git & GitHub
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-gray-200 text-sm backdrop-blur-sm">
+              UI/UX Design
+            </span>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+
+            <button
+              type="button"
+              onClick={() =>
+                document.getElementById("portfolio")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+              className="inline-flex items-center justify-center rounded-full bg-blue-500 px-7 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-400 hover:scale-105 shadow-lg shadow-blue-500/20"
+            >
+              View Projects
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                document.getElementById("about")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-7 py-3 font-semibold text-white transition-all duration-300 hover:border-blue-400 hover:text-blue-300 hover:scale-105"
+            >
+              About Me
+            </button>
+
+            <a
+              href="/Alpesh_Nichat_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-purple-400/40 bg-purple-500/10 px-7 py-3 font-semibold text-purple-200 transition-all duration-300 hover:bg-purple-500/20 hover:scale-105"
+            >
+              View Resume
+            </a>
+
+          </div>
+
+
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-5">
-            <a href="https://github.com/Nicalpesh31" target="_blank" rel="noopener noreferrer" className="social-icon hover:text-blue-400 transition">
+          <div className="flex justify-center items-center gap-5 text-white">
+            <a
+              href="https://github.com/Nicalpesh31"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon hover:text-blue-400 transition-all duration-300 hover:scale-110"
+              aria-label="GitHub"
+            >
               <Github size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/alpesh-nichat-751993326/" target="_blank" rel="noopener noreferrer" className="social-icon hover:text-blue-400 transition">
+
+            <a
+              href="https://www.linkedin.com/in/alpesh-nichat-751993326/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon hover:text-blue-400 transition-all duration-300 hover:scale-110"
+              aria-label="LinkedIn"
+            >
               <Linkedin size={24} />
             </a>
-            <a href="https://www.instagram.com/alpesh_nichat/" target="_blank" rel="noopener noreferrer" className="social-icon hover:text-blue-400 transition">
+
+            <a
+              href="https://www.instagram.com/alpesh_nichat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon hover:text-pink-400 transition-all duration-300 hover:scale-110"
+              aria-label="Instagram"
+            >
               <Instagram size={24} />
             </a>
-            <a href="https://twitter.com/AlpeshNichat" target="_blank" rel="noopener noreferrer" className="social-icon hover:text-blue-400 transition">
+
+            <a
+              href="https://twitter.com/AlpeshNichat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon hover:text-blue-400 transition-all duration-300 hover:scale-110"
+              aria-label="Twitter"
+            >
               <Twitter size={24} />
             </a>
-            <a href="https://www.facebook.com/Alpeshnichat123" target="_blank" rel="noopener noreferrer" className="social-icon hover:text-blue-400 transition">
+
+            <a
+              href="https://www.facebook.com/Alpeshnichat123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon hover:text-blue-500 transition-all duration-300 hover:scale-110"
+              aria-label="Facebook"
+            >
               <Facebook size={24} />
             </a>
           </div>
@@ -129,15 +229,22 @@ function App() {
             <div>
               <h3 className="text-3xl font-semibold mb-6">Full Stack Web Developer</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                I'm a dedicated Full Stack Developer with a focus on crafting responsive, user-centric web applications.
-                I enjoy blending logic and creativity to build seamless, modern experiences that solve real-world problems.
+                I’m a developer focused on creating responsive, user-friendly web experiences that combine clean design with solid functionality.
+                I enjoy turning ideas into practical digital products that are easy to use and built to perform.
               </p>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                With a strong base in front-end and back-end technologies, and a hunger to learn more, I'm prepared to take on challenges that help me grow while contributing meaningfully to any team or project.
+                My work spans front-end interfaces, dynamic web applications, and backend logic with a strong interest in modern JavaScript frameworks, product thinking, and scalable UI development.
               </p>
 
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-sm text-blue-200">React</span>
+                <span className="rounded-full border border-purple-400/30 bg-purple-500/10 px-3 py-1 text-sm text-purple-200">JavaScript</span>
+                <span className="rounded-full border border-green-400/30 bg-green-500/10 px-3 py-1 text-sm text-green-200">Node.js</span>
+                <span className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-sm text-cyan-200">UI/UX</span>
+              </div>
+
               <a
-                href="/public/Alpesh_Nichat-Resume.pdf"
+                href="/Alpesh_Nichat_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-md hover:scale-105 transform transition duration-300"
@@ -153,11 +260,15 @@ function App() {
                 ['Email', 'alpesh.nic31@gmail.com'],
                 ['Phone', '+91 98345 98196'],
                 ['City', 'Pune, Maharashtra'],
-                ['Age', '25'],
+                ['Age', '26'],
                 ['Birthday', '31 May 2000'],
                 ['Degree', 'MCA'],
-                ['Experience', 'Completed 6-month internship at Oytie Pvt. Ltd. and currently pursuing a React internship at Anudip Foundation'],
-                ['Interests', 'Web Development, Software Development, UI/UX Design'],
+                ['Current Position', 'Assistant Lecturer at Gokul Global University'],
+                ['Organization', 'Arrivo Private Limited'],
+                ['Experience', '5+ years of IT-sector experience'],
+                ['Previous Experience', '6-month internship at Oytie Pvt. Ltd. and React internship at Anudip Foundation'],
+                ['Subjects Taught', 'Web Development, Git & Version Control, Mathematics for AI, Dynamic Web Development'],
+                ['Interests', 'Web Development, Software Development, UI/UX Design']
               ].map(([label, value], i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-sm text-blue-400 font-medium">{label}</span>
@@ -177,84 +288,69 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-2">Skills</h2>
-            <p className="text-blue-400">Technologies and tools I am proficient in</p>
-
+            <p className="text-blue-400">Core technologies and tools I use to build modern digital products</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-center">
-            {/* HTML */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-html5-plain text-6xl text-orange-500 mb-4"></i>
               <p className="font-semibold">HTML5</p>
             </div>
 
-            {/* CSS */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-css3-plain text-6xl text-blue-500 mb-4"></i>
               <p className="font-semibold">CSS3</p>
             </div>
 
-            {/* JavaScript */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-javascript-plain text-6xl text-yellow-500 mb-4"></i>
               <p className="font-semibold">JavaScript</p>
             </div>
 
-            {/* React */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-react-original text-6xl text-cyan-400 mb-4"></i>
               <p className="font-semibold">React</p>
             </div>
 
-            {/* Node.js */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-nodejs-plain text-6xl text-green-500 mb-4"></i>
               <p className="font-semibold">Node.js</p>
             </div>
 
-            {/* Java */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-java-plain text-6xl text-red-700 mb-4"></i>
               <p className="font-semibold">Java</p>
             </div>
 
-            {/* MongoDB */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-mongodb-plain text-6xl text-green-400 mb-4"></i>
               <p className="font-semibold">MongoDB</p>
             </div>
 
-            {/* Git */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-git-plain text-6xl text-red-500 mb-4"></i>
               <p className="font-semibold">Git</p>
             </div>
 
-            {/* GitHub */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-github-original text-6xl text-gray-300 mb-4"></i>
               <p className="font-semibold">GitHub</p>
             </div>
 
-            {/* Bootstrap */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-bootstrap-plain text-6xl text-purple-600 mb-4"></i>
               <p className="font-semibold">Bootstrap</p>
             </div>
 
-            {/* Tailwind CSS */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-tailwindcss-plain text-6xl text-cyan-500 mb-4"></i>
               <p className="font-semibold">Tailwind CSS</p>
             </div>
 
-            {/* SQL */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-xl border border-white/5 bg-gray-800/60 p-4 shadow-lg">
               <i className="devicon-sqlite-plain text-6xl text-blue-400 mb-4"></i>
               <p className="font-semibold">SQL</p>
             </div>
-
-
           </div>
         </div>
       </section>
@@ -265,8 +361,8 @@ function App() {
       <section ref={projectsRef} id="portfolio" className="section py-20 px-4 bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2">Projects</h2>
-            <p className="text-blue-400">My Works</p>
+            <h2 className="text-3xl font-bold mb-2">Selected Projects</h2>
+            <p className="text-blue-400">A few of the products and experiences I’ve built</p>
           </div>
 
           <div className="flex justify-center mb-8">
@@ -627,7 +723,7 @@ function App() {
 
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-2">Get in Touch</h2>
-            <p className="text-blue-400 text-lg">I'd love to hear from you</p>
+            <p className="text-blue-400 text-lg">Available for freelance work, internships, and full-time opportunities</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -676,7 +772,6 @@ function App() {
             name="contact"
             method="POST"
             data-netlify="true"
-            netlify
             className="space-y-6"
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -715,7 +810,10 @@ function App() {
               className="w-full p-3 bg-gray-800 rounded-lg"
             />
 
-            <button type="submit">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 font-semibold text-white transition hover:opacity-90"
+            >
               Send Message
             </button>
           </form>

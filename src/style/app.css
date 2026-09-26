@@ -1,57 +1,106 @@
 @keyframes textGlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .animate-text {
-    animation: textGlow 3s ease infinite;
-    background-size: 200% 200%;
+  50% {
+    background-position: 100% 50%;
   }
+}
 
-  @keyframes fadeHighlight {
-    0% {
-      color: #ffffff; /* Default white */
-      text-shadow: none;
-    }
-    50% {
-      color: #00bfff; /* Subtle blue highlight */
-      text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
-    }
-    100% {
-      color: #ffffff; /* Back to default white */
-      text-shadow: none;
-    }
+.animate-text {
+  animation: textGlow 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes fadeHighlight {
+  0% {
+    color: #ffffff;
+    text-shadow: none;
   }
-  
-  .highlight-item {
-    animation: fadeHighlight 1.5s ease-in-out forwards;
-    animation-delay: calc(var(--highlight-index) * 0.3s); /* Staggered delay */
-    display: inline-block;
-    font-weight: 600; /* Slightly bold for emphasis */
+  50% {
+    color: #00bfff;
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
   }
-  
-  /* Assign staggered delays to each item */
-  .highlight-item:nth-child(1) {
-    --highlight-index: 0;
+  100% {
+    color: #ffffff;
+    text-shadow: none;
   }
-  
-  .highlight-item:nth-child(2) {
-    --highlight-index: 1;
+}
+
+.highlight-item {
+  animation: fadeHighlight 1.5s ease-in-out forwards;
+  animation-delay: calc(var(--highlight-index) * 0.3s);
+  display: inline-block;
+  font-weight: 600;
+}
+
+.highlight-item:nth-child(1) {
+  --highlight-index: 0;
+}
+
+.highlight-item:nth-child(2) {
+  --highlight-index: 1;
+}
+
+.highlight-item:nth-child(3) {
+  --highlight-index: 2;
+}
+
+.highlight-item:nth-child(4) {
+  --highlight-index: 3;
+}
+
+.highlight-item:nth-child(5) {
+  --highlight-index: 4;
+}
+
+.highlight-item:nth-child(6) {
+  --highlight-index: 5;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(96, 165, 250, 0.9);
+  animation: typing 4s steps(20) infinite alternate, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  0%,
+  20% {
+    width: 0;
   }
-  
-  .highlight-item:nth-child(3) {
-    --highlight-index: 2;
+  50%,
+  100% {
+    width: 100%;
   }
-  
-  .highlight-item:nth-child(4) {
-    --highlight-index: 3;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
-  
-  .highlight-item:nth-child(5) {
-    --highlight-index: 4;
-  }
-  
-  .highlight-item:nth-child(6) {
-    --highlight-index: 5;
-  }
+}
   
